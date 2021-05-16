@@ -1,0 +1,36 @@
+<html>
+	<head>
+		
+	</head>
+	<body style="background-color: #fefefe;">	
+		<center>
+			<br>
+			<br>
+			<video id="video" width="640" height="480" autoplay></video>
+			<br>
+			<br>
+			<a href=thank_you>
+                <button type="button" style=" width: 200px; height: 50px; border-radius:25px; background-color: #0a2351; border-color: #66FcF1;" class="btn">
+                <p style="color: #ffffff; padding-top: 5px;" class="text-white-center">
+                Exit
+              </p>
+              </button>
+             </a>
+		</center>
+		
+		<!-- <div class="open_grepper_editor" title="Edit & Save To Grepper"></div> -->
+	</body>
+	<script type="text/javascript">
+		var video = document.getElementById('video');
+
+		// Get access to the camera!
+		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+		    // Not adding `{ audio: true }` since we only want video now
+		    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+		        //video.src = window.URL.createObjectURL(stream);
+		        video.srcObject = stream;
+		        video.play();
+		    });
+		}
+	</script>
+</html>
